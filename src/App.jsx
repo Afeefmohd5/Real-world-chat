@@ -21,7 +21,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="g-1">
       <h1>Real-time Chat App</h1>
       {user ? <Chat user={user} /> : <Auth setUser={setUser} />}
     </div>

@@ -52,7 +52,7 @@ const Chat = ({ user }) => {
         </div>
 
         <form onSubmit={handleSendMessage}>
-          <input
+          <input className="p-1 g-1"
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
