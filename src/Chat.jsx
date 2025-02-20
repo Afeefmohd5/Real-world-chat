@@ -39,27 +39,31 @@ const Chat = ({ user }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <h2 className="text-2xl text-red-300">Welcome, {user.displayName}</h2>
-      <button className="p-1 border w-24 rounded bg-blue-500 text-white" onClick={handleSignOut}>Sign Out</button>
+    <div className="flex flex-col items-center gap-5  ">
+      <h2 className="text-2xl text-pink-600">WELCOME, {user.displayName}.</h2>
+      <button className="p-1 border w-24 rounded hover:bg-pink-300 text-white" onClick={handleSignOut}>SIGN OUT</button>
       <div className="gap-2">
-        <div>
-          {messages.map((msg, index) => (
-            <div key={index}>
-              <strong className="text-red-100">{msg.displayName}</strong>: {msg.text}
-            </div>
-          ))}
-        </div>
 
-        <form className="flex flex-col items-center gap-2" onSubmit={handleSendMessage}>
-          <input className="p-1 border rounded  "
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Type a message..."
-          />
-          <button className="p-1 border w-24 rounded bg-blue-500 text-white" type="submit">Send</button>
-        </form>
+        <div className="flex flex-col items-center justify-between gap-8">
+          <div>
+            {messages.map((msg, index) => (
+              <div key={index}>
+                <strong className="text-red-100">{msg.displayName}</strong>: {msg.text}
+              </div>
+            ))}
+          </div>
+
+          <form className="flex items-center gap-2" onSubmit={handleSendMessage}>
+            <input className="p-1 border rounded w-52 "
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Type a message..."
+            />
+            <button className="p-1 border w-16 rounded hover:bg-pink-300 text-white" type="submit">Send</button>
+          </form>
+
+        </div>
       </div>
     </div>
   );
