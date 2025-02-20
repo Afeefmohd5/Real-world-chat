@@ -21,8 +21,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="g-1">
-      <h1>Real-time Chat App</h1>
+    <div className="flex items-center justify-center flex-col border p-4 rounded-3xl g-1">
+      <h1 className="text-3xl gap-4 text-red-400">Real-time Chat App</h1>
       {user ? <Chat user={user} /> : <Auth setUser={setUser} />}
     </div>
   );

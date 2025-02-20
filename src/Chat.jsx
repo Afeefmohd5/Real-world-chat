@@ -39,26 +39,26 @@ const Chat = ({ user }) => {
   };
 
   return (
-    <div>
-      <h2>Welcome, {user.displayName}</h2>
-      <button onClick={handleSignOut}>Sign Out</button>
-      <div>
+    <div className="flex flex-col items-center gap-2">
+      <h2 className="text-2xl text-red-300">Welcome, {user.displayName}</h2>
+      <button className="p-1 border w-24 rounded bg-blue-500 text-white" onClick={handleSignOut}>Sign Out</button>
+      <div className="gap-2">
         <div>
           {messages.map((msg, index) => (
             <div key={index}>
-              <strong>{msg.displayName}</strong>: {msg.text}
+              <strong className="text-red-100">{msg.displayName}</strong>: {msg.text}
             </div>
           ))}
         </div>
 
-        <form onSubmit={handleSendMessage}>
-          <input className="p-1 g-1"
+        <form className="flex flex-col items-center gap-2" onSubmit={handleSendMessage}>
+          <input className="p-1 border rounded  "
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type a message..."
           />
-          <button type="submit">Send</button>
+          <button className="p-1 border w-24 rounded bg-blue-500 text-white" type="submit">Send</button>
         </form>
       </div>
     </div>

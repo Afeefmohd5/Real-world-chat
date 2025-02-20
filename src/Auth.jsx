@@ -20,9 +20,9 @@ const Auth = ({ setUser }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center gap-2">
       <h2>Login with Google</h2>
-      <button onClick={handleSignIn} disabled={loading}>
+      <button className="p-1 border  rounded bg-blue-500 text-white" onClick={handleSignIn} disabled={loading}>
         {loading ? "Signing In..." : "Sign In with Google"}
       </button>
     </div>
